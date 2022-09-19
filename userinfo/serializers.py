@@ -8,6 +8,10 @@ class UserInfoSerializer(serializers.ModelSerializer):
         
     def __init__(self, *args, **kwargs):
         super(UserInfoSerializer, self).__init__(*args, **kwargs)
+        self.fields['first_name'].required = False
+        self.fields['last_name'].required = False
+        self.fields['email'].required = False
+        self.fields['user_id'].required = False
         self.fields['image_url'].required = False
         self.fields['zipcode'].required = False
         self.fields['street'].required = False
