@@ -1,4 +1,4 @@
 /venv
-/backend/__pycache__
-/authBikes/__pycache__
 .env
+__pycache__/
+*.log
