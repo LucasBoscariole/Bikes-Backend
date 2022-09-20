@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-wzqh1*+v_t&11p5@8p1h5ggr7o+4xp8v5z!oq@=sc8kxk(=p)3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'authBikes',
-    'userinfo'
+    'userinfo',
+    'bikes'
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,6 @@ DEFAULT_FROM_EMAIL = os.getenv("SENDGRID_SENDER", "")
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+
+SESSION_COOKIE_SAMESITE = None
+CSRF_COOKIE_SAMESITE = None

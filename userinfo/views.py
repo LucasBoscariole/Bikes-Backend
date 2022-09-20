@@ -6,9 +6,10 @@ from rest_framework import status
 
 # Create your views here.
 class UserInfoAPIView(APIView):
+    serializer_class = UserInfoSerializer
     def get(self, request):
-        todos = UserInfo.objects.all()
-        serializer = UserInfoSerializer(todos, many=True)
+        users = UserInfo.objects.all()
+        serializer = UserInfoSerializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):

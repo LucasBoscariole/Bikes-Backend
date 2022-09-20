@@ -65,7 +65,7 @@ class RefreshAPIView(APIView):
     def post(self, request):
         refresh_token = request.COOKIES.get('refresh_token')
         id = decode_refresh_token(refresh_token)
-
+        
         if not UserToken.objects.filter(
             user_id = id,
             token = refresh_token,
@@ -104,7 +104,7 @@ class ForgotAPIView(APIView):
             token = token
         )
 
-        url = '' + token
+        url = 'https://bikes-rental-lucas-boscariole.netlify.app/' + token
 
         html_content = render_to_string('../templates/email.html',{"link": url})
         send_mail(
